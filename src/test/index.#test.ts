@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { calculator } from ".";
+import { calculator } from "../example";
 
 describe("plus", () => {
   test("should 2 + 2 = 4", () => {
