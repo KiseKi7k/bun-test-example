@@ -1,15 +1,15 @@
 # bun-test-example
 
-To install dependencies:
+## Install Dependency
 
 ```bash
 bun install
 ```
 
-To run:
+## Test Command
 
 ```bash
-bun run index.ts
+bun test
+bun test <name> // filter
+bun test --coverage // coverage
 ```
-
-This project was created using `bun init` in bun v1.3.13. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
