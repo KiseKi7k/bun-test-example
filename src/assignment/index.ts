@@ -1,3 +1,6 @@
+// Implement class Queue โดยมีฟังชัชั่นดังนี้ พร้อมเขียน test 
+// Note พยายามเขียนให้ handle error ทุกเคส
+
 export class Queue {
   private queue: string[];
 

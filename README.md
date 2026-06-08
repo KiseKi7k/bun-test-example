@@ -1,12 +1,12 @@
 # bun-test-example
 
-## Install Dependency
+### Install Dependency
 
 ```bash
 bun install
 ```
 
-## Test Command
+### Test Command
 
 ```bash
 bun test

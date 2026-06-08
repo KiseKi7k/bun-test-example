@@ -1,5 +1,5 @@
 import { describe, test, expect, beforeEach } from "bun:test";
-import { Queue } from "."; // ปรับ path ให้ตรงกับไฟล์ของคุณ
+import { Queue } from "../assignment"; 
 
 describe("Queue Class", () => {
   let q: Queue;
@@ -20,7 +20,6 @@ describe("Queue Class", () => {
 
       expect(q.getLength()).toBe(3);
 
-      // คนที่เข้าก่อน (Alice) ต้องออกก่อน
       expect(q.dequeue()).toBe("Alice");
       expect(q.getLength()).toBe(2);
 
@@ -30,8 +29,6 @@ describe("Queue Class", () => {
     });
 
     test("should throw error or return undefined when dequeuing from an empty queue", () => {
-      // หมายเหตุ: ขึ้นอยู่กับการเขียนโค้ดของคุณว่าถ้าคิวว่างจะให้ return เป็น undefined หรือ throw error
-      // สมมติว่าต้องการให้ return undefined:
       expect(q.dequeue()).toBeUndefined();
     });
   });
@@ -43,12 +40,11 @@ describe("Queue Class", () => {
       q.addQueue("c"); // pos 2
       q.addQueue("d"); // pos 3
 
-      // [a, b, c, d] -> แทรก "e" ที่ตำแหน่ง 1
       q.insert("e", 1);
 
       expect(q.getLength()).toBe(5);
-      expect(q.dequeue()).toBe("a"); // ตัวแรกยังเป็น a
-      expect(q.dequeue()).toBe("e"); // ตัวถัดมาต้องเป็น e ที่เพิ่งแทรกเข้าไป
+      expect(q.dequeue()).toBe("a");
+      expect(q.dequeue()).toBe("e"); 
       expect(q.dequeue()).toBe("b");
     });
 
@@ -62,8 +58,6 @@ describe("Queue Class", () => {
     test("should throw error if position is invalid (out of bounds)", () => {
       q.addQueue("Alice");
 
-      // ลองแทรกในตำแหน่งที่ติดลบ หรือเลยความยาวของคิวที่มีอยู่
-      // อย่าลืมครอบด้วย arrow function () => ... เพื่อให้ Bun ดักจับ Error ได้
       expect(() => q.insert("Bob", -1)).toThrow();
       expect(() => q.insert("Charlie", 5)).toThrow();
     });
